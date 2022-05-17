@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Allow only specified ports</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Allow only specified ports</h1><br/><br /><br /><a href=""><img src="images/2203-1.png" alt="images/2203-1.png" /></a><br /><br /><strong>Allow Web Browsing on the Infected Machine</strong><br />To lower risk a default outbound deny policy should be put into place so that all systems can only reacch outbound on authorized ports. For this lab we will be allowing ports 53 and 443 only. This would prevent and detect any activity to unused/unauthorized ports.<br /><br /><br />1. By default DROP packets <br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">sudo</span> iptables -P INPUT DROP<br /><span style="color:#ff9d00;font-weight:700">sudo</span> iptables -P OUTPUT DROP</pre></div><br />    <a href=""><img src="images/2203-2.png" alt="images/2203-2.png" /></a><br />    <a href=""><img src="images/2203-3.png" alt="images/2203-3.png" /></a><br /><br />2. Allow any outbound connections to destination TCP port 80 and 443<br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">sudo</span> iptables -A OUTPUT -p udp --dport 53 -j ACCEPT<br /><span style="color:#ff9d00;font-weight:700">sudo</span> iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT</pre></div><br />    <a href=""><img src="images/2203-4.png" alt="images/2203-4.png" /></a><br /><br />3. Allowing Established and Related Incoming Connections (<a href="https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands">source</a>)<br />    As network traffic generally needs to be two-way – incoming and outgoing – to work properly, it is typical to create a firewall rule that allows established and related incoming traffic, so that the server will allow return traffic for outgoing connections initiated by the server itself. <br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">sudo</span> iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT</pre></div><br />    <a href=""><img src="images/2203-5.png" alt="images/2203-5.png" /></a><br />    <br /><br /><br />    </div>
+</body>
+</html>

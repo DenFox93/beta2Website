@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>/dev/shm</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>/dev/shm</h1><br/><br />/dev/shm is nothing but implementation of traditional shared memory concept. It is an efficient means of passing data between programs. One program will create a memory portion, which other processes (if permitted) can access. This will result into speeding up things on Linux<br />Mounting tmpfs at /dev/shm is handled automatically by systemd.<br />tmpfs can be resized using the size={size} parameter in /etc/fstab . If we don&#39;t specify the size, it will be half the RAM.<br /><br /><br />• <strong>nodev</strong> option set on<br />    nodev mount option specifies that the filesystem cannot contain special devices.<br />    You may still be able to create device nodes, but if the filesystem is mounted with the nodev option, any device nodes on that filesystem won&#39;t work.(<a href="https://unix.stackexchange.com/questions/533675/meaning-of-nodev-in-mount-options-on-linux?noredirect=1&lq=1">stackexchange</a>)<br />• <strong>nosuid</strong> option set on<br />• <strong>noexec</strong> option set on</div>
+</body>
+</html>

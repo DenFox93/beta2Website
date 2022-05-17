@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>1. Hunt for parameters that fetch external resources</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>1. Hunt for parameters that fetch external resources</h1><br/>SSRFs occur in features that require visiting and fetching external resources:<br />• webhooks<br />    <div class="codebox"><pre>POST <span style="color:#ff9d00;font-weight:700">/</span>webhook<br />Host<span style="color:#ff9d00;font-weight:700">:</span> public.example.com<br /><br /><span style="color:#7f0044;font-weight:400">url</span>=https<span style="color:#ff9d00;font-weight:700">://</span>www.attacker.com</pre></div><br />• file uploads<br />    <div class="codebox"><pre>POST <span style="color:#ff9d00;font-weight:700">/</span>upload_profile_from_url<br />Host<span style="color:#ff9d00;font-weight:700">:</span> public.example.com<br /><br /><span style="color:#7f0044;font-weight:400">user_id</span>=1234<span style="color:#ff9d00;font-weight:700">&amp;</span>url=https<span style="color:#ff9d00;font-weight:700">://</span>www.attacker.com<span style="color:#ff9d00;font-weight:700">/</span>profile.jpeg</pre></div><br />• document and image processors<br />• link expansions or thumbnails<br />• proxy services<br />    <div class="codebox"><pre>https<span style="color:#ff9d00;font-weight:700">://</span>public.example.com<span style="color:#ff9d00;font-weight:700">/</span>proxy?url=https<span style="color:#ff9d00;font-weight:700">://</span>google.com</pre></div><br />• user-provided URLs<br />•  URLs embedded in files that are processed by the application <br />   ◇ XML files<br />   ◇ PDF files <br />• hidden API endpoints that accept URLs as input<br />• input that gets inserted into HTML tags<br /><br /><br />Bibliography:<br />• <a href="https://www.amazon.com/Bug-Bounty-Bootcamp-Reporting-Vulnerabilities/dp/1718501544">Bug Bounty Bootcamp: The Guide to Finding and Reporting Web<br /></a></div>
+</body>
+</html>

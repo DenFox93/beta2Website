@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>4. Crack the Ticket</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>4. Crack the Ticket</h1><br/><br /><strong><h3>Here we have different possibilities</h3></strong><br /><br />•<strong> Use tgsrepcrack.py of Tim Medin(Very slow)</strong><br />    Rename the file found:<br />        <a href=""><img src="images/1129-1.png" alt="images/1129-1.png" /></a><br />        in something like “ticket.kirbi”<br />    Now we can use <strong>tgsrepcrack.py</strong>, from Kerberoast project of Tim Medin(GitHub - nidem/kerberoast) to brute force dumped Kerberos tickets<br />    <div class="codebox"><pre>C<span style="color:#ff9d00;font-weight:700">:\</span>&gt; python tgsrepcrack.py example.dict ticket.kirbi</pre></div><br />        <a href=""><img src="images/1129-2.png" alt="images/1129-2.png" /></a><br /><br />• <strong>Convert a kirbi file and crack it with John The Ripper</strong><br />    <div class="codebox"><pre>root@kali<span style="color:#ff9d00;font-weight:700">:/</span># <span style="color:#ff9d00;font-weight:700">/</span>usr<span style="color:#ff9d00;font-weight:700">/</span>share<span style="color:#ff9d00;font-weight:700">/</span>john<span style="color:#ff9d00;font-weight:700">/</span>kirbi2john.py [kirbiFile] &gt; [outputFile]</pre></div><br />        <a href=""><img src="images/1129-3.png" alt="images/1129-3.png" /></a><br />    <div class="codebox"><pre>root@kali<span style="color:#ff9d00;font-weight:700">:/</span># john --wordlist=[wordlist] [FileWithHash]</pre></div><br />        <a href=""><img src="images/1129-4.png" alt="images/1129-4.png" /></a></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bypass with: NULL bytes(%00) and ?</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Bypass with: NULL bytes(%00) and ?</h1><br/><strong><h4>Null Bytes</h4></strong><br />PHP &lt;5.5 are vulnerable to null byte injection, which means that adding a <strong>null byte (%00)</strong> at the end of the string would terminate the string and not consider anything after it. This is due to how strings are stored in low-level memory, where strings in memory must use a null byte to indicate the end of the string, as seen in Assembly, C, or C++ languages.<br /><br />To exploit this vulnerability, we can end our payload with a null byte:<br /><span style="color:#865e3c;">example:</span><br />	/etc/passwd<strong><span style="color:#e01b24;">%00</span></strong><br />Such that the final path passed to include() would be (/etc/passwd%00.php). This way, even though .php is appended to our string, anything after the null byte would be truncated, and so the path used would actually be /etc/passwd, leading us to bypass the appended extension.<br /><br /><strong><h3>Question Mark</h3></strong><br />Another possibility is use ? at the end of the filename to treat the other characters as parmaeters<br /><span style="color:#865e3c;">example:</span><br />	/etc/passwd<strong><span style="color:#e01b24;">?</span></strong></div>
+</body>
+</html>

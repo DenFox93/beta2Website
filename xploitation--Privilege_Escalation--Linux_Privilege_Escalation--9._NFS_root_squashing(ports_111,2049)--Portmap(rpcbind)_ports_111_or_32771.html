@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Portmap(rpcbind) ports 111 or 32771</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Portmap(rpcbind) ports 111 or 32771</h1><br/><br />Ports portmap(rpcbind): <br />   ◇ TCP/UDP 11<br />   ◇ TCP/UDP 32771<br /><br /><br />*NFSv2 or NFSv3 implementations require the portmap(rpcbind) service for backward compatibility.<br /><br />Information gleaned from the portmap(rpcbind) service can offer insight regarding ports that are listening on a machine, but that may not necessarily be accessible over the network.<br />query the portmap(rpcbind) service on port TCP/111, gives us an idea of other RPC-based services and ports that a system might have open, either remotely or locally.<br /><br />Enumerate Portmap and the associated RPC service:<br />   ◇ nmap<br />       <div class="codebox"><pre>attacker@kali<span style="color:#ff9d00;font-weight:700">:/</span># nmap --script rpc-grind,rpcinfo &lt;ipTarget&gt; -p 111</pre></div><br />       <a href=""><img src="images/1381-1.png" alt="images/1381-1.png" /></a><br />   ◇ rpcinfo<br />       <div class="codebox"><pre>attacker@kali<span style="color:#ff9d00;font-weight:700">:/</span># rpcinfo -p &lt;ipTarget&gt;</pre></div>    <br />       <a href=""><img src="images/1381-2.png" alt="images/1381-2.png" /></a></div>
+</body>
+</html>

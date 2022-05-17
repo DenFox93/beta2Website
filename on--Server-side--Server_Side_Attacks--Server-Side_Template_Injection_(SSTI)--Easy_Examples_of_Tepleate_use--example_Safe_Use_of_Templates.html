@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>example: Safe Use of Templates</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>example: Safe Use of Templates</h1><br/><span style="color:#a52a2a;">Example: app.py + index.html</span><br /><span style="text-decoration:underline;">Safe use of Template</span>: also because in this example the user does not have any control over the variables.<br />When we visit the website, we will receive an HTML page containing the values of the title and content variables evaluated inside the double brackets on the template page.<br />• app.py<br />    <div class="codebox"><pre>#/usr/bin/python3<br />from flask import *<br /><br />app = Flask(__name__, template_folder=&quot;./&quot;)<br /><br />@app.route(&quot;/&quot;)<br />def index():<br />	title = &quot;Index Page&quot;<br />	content = &quot;Some content&quot;<br />	return render_template(&quot;index.html&quot;, title=title, content=content)<br /><br />if __name__ == &quot;__main__&quot;:<br />	app.run(host=&quot;127.0.0.1&quot;, port=5000)</pre></div><br />• index.html<br />    <div class="codebox"><pre>&lt;!DOCTYPE html&gt;<br />&lt;html lang=&quot;en&quot;&gt;<br />&lt;head&gt;<br />    &lt;meta charset=&quot;UTF-8&quot;&gt;<br />    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br />    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br />    &lt;title&gt;Document&lt;/title&gt;<br />&lt;/head&gt;<br />&lt;body&gt;<br />    &lt;h1&gt;{{title}}&lt;/h1&gt;<br />    &lt;p&gt;{{content}}&lt;/p&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;</pre></div><code><br /></code><br /></div>
+</body>
+</html>

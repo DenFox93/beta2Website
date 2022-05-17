@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>1. Fuzzing for PHP Files</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>1. Fuzzing for PHP Files</h1><br/><br /><strong><h3>Fuzzing for PHP Files</h3></strong><br /><br />1. Search for PHP files<br />   ◇ Ffuf<br />	<div class="codebox"><pre>$ ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/FUZZ.php</pre></div><br />	If we are able to do Local File Inclusion (LFI) we are interested to these responses:<br />	• 200 → OK<br />	• 301 → Moved Permanently<br />	• 302 → Found<br />	• 403 → forbidden<br />	<span style="text-decoration:underline;">Note</span>: not interested to 404 (Not Found)<br />	<a href=""><img src="images/2340-1.png" alt="images/2340-1.png" /></a><br />   <br />   ◇ Burp Intruder<br />   	<a href=""><img src="images/2340-2.png" alt="images/2340-2.png" /></a><br /><br />2. Scan the PHP files found to find other endpoints. Scan also index.php that could give good hint<br /><br /><br /><br /><br /><strong>Wordlist:</strong><br />• dirs3arch: <a href="https://github.com/puniaze/dirs3arch/tree/master/db/dirbuster">https://github.com/puniaze/dirs3arch/tree/master/db/dirbuster</a><br />   ◇ small <a href="https://raw.githubusercontent.com/puniaze/dirs3arch/master/db/dirbuster/directory-list-2.3-small.txt">https://raw.githubusercontent.com/puniaze/dirs3arch/master/db/dirbuster/directory-list-2.3-small.txt</a></div>
+</body>
+</html>

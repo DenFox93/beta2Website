@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>automounting</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>automounting</h1><br/><br /> autofs allows automatic mounting of devices, typically including CD/DVDs and USB drives.<br />    With automounting enabled anyone with physical access could attach a USB drive or disc and have its contents available in system even if they lacked permissions to mount it themselves.<br />    Check if autofs is not installed/enabled:<br />    <div class="codebox"><pre>systemctl is-enabled autofs  <span style="color:#0088ff;font-weight:400">#Verify result is not &quot;enabled&quot;</span></pre></div><br />    <div class="codebox"><pre>dpkg -s autofs</pre></div><br /></div>
+</body>
+</html>

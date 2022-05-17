@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Responder</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Responder</h1><br/><br />Responder tool: <a href="https://github.com/lgandx/Responder">https://github.com/lgandx/Responder</a><br />Responder is a tool created by <a href="https://twitter.com/pythonresponder">@pythonresponder</a><br /><br />Responder, developed by Trustwave SpiderLabs, is a tool that can answer LLMNR and NBT-NS queries giving its own IP address as the destination for any hostname requested.<br /><br />Install:<br /><div class="codebox"><pre>apt <span style="color:#ff9d00;font-weight:700">install</span> responder</pre></div><br />or<br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">cd</span> <span style="color:#ff9d00;font-weight:700">/</span>root<span style="color:#ff9d00;font-weight:700">/</span>bin<span style="color:#ff9d00;font-weight:700">/</span><br />git clone https<span style="color:#ff9d00;font-weight:700">://</span>github.com<span style="color:#ff9d00;font-weight:700">/</span>lgandx<span style="color:#ff9d00;font-weight:700">/</span>Responder.git<br /><span style="color:#ff9d00;font-weight:700">cd</span> Responder</pre></div><br /><br /><strong>Responder</strong><br />If a client/target cannot resolve a name via DNS it will fall back to name resolution via LLMNR (introduced in Windows Vista) and NBT-NS.<br /><span style="text-decoration:underline;">Responder</span> is a tool we can utilize for exploiting the LLMNR and NBT-NS weakness for capturing <strong>NTLMv1/v2 hashes</strong> and relaying them for authentication to other systems.<br />Responder works by listening for LLMNR or NBT-NS broadcast messages, and spoofing responses to targeted hosts, resulting in intercepting hashes and act as a Man in the Middle.<br /><br /><br /><br />bibliography<br /><a href="https://www.notsosecure.com/pwning-with-responder-a-pentesters-guide/">https://www.notsosecure.com/pwning-with-responder-a-pentesters-guide/</a><br /><a href="https://www.sikich.com/insight/using-multirelay-with-responder-for-penetration-testing/">https://www.sikich.com/insight/using-multirelay-with-responder-for-penetration-testing/</a></div>
+</body>
+</html>

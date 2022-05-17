@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Cheat Sheet</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Cheat Sheet</h1><br/><br /><strong>Nmap Initial Enumeration</strong><br /><br />• quick initial nmap scan<br />	<div class="codebox"><pre>nmap -sC -sV -O -oA initial 10.10.10.17</pre></div><br /><br />• Scan basic scripts open ports<br />	<div class="codebox"><pre>nmap -sC -sV -p 21,22,55 -oA openPorts 10.10.10.17<br /></pre></div><br />• scan for all tcp ports<br />	<div class="codebox"><pre>nmap -p- -oA tcp 10.10.10.17</pre></div><br />• scan for all udp ports <br />	<div class="codebox"><pre>nmap -sU -p- -oA udp 10.10.10.17</pre></div><br /><br />• Scan basic scripts <br />	<div class="codebox"><pre>nmap -sC -sV -p- -oA full 10.10.10.17<br /></pre></div><br /><br /><strong>Nmap script open ports (default service)</strong><br />	<div class="codebox"><pre>ls /usr/share/nmap/scripts/*service*</pre></div><br />		<a href=""><img src="images/2665-1.png" alt="images/2665-1.png" /></a><br />	<div class="codebox"><pre>nmap --script ftp-vsftpd-backdoor -p 21 10.10.10.3</pre></div><br /><br /><strong>nmap vulnerablities</strong><br /><div class="codebox"><pre>nmap --script vuln 10.10.10.3</pre></div><br /><div class="codebox"><pre>root@kali:/# nmap --script-updatedb<br />root@kali:/# nmap -sV --script vulners &lt;target&gt;</pre></div><br /><br /><br /><strong>Searchsploit for the services found</strong><br />	<div class="codebox"><pre>searchsploit --id httpd<br />searchsploit --id openssh 7.2p2</pre></div><br />	To download an exploit<br />	<div class="codebox"><pre>searchsploit -m 18650</pre></div><br /><br /><br />• enumerate wordpress users<br />	<div class="codebox"><pre>wpscan --url https://brainfuck.htb --disable-tls-checks --enumerate u</pre></div></div>
+</body>
+</html>

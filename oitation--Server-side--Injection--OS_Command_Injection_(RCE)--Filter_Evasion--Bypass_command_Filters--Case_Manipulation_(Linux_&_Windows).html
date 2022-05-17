@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Case Manipulation (Linux & Windows)</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Case Manipulation (Linux & Windows)</h1><br/><br /><br />Inverting the character cases of a command (e.g. WHOAMI) or alternating between cases (e.g. WhOaMi)<br /><br /><strong>Windows Server</strong><br />It is easy case, in fact since PowerShell and CMD are <span style="text-decoration:underline;">case-insensitive</span> we can change the casing of the characters of the command and send it:<br /><div class="codebox"><pre>WhOaMi<br />WHOAMI</pre></div><br />    <a href=""><img src="images/2435-1.png" alt="images/2435-1.png" /></a><br />    <a href=""><img src="images/2435-2.png" alt="images/2435-2.png" /></a><br /><br /><strong>Linux Server</strong><br />Linux and a bash shell, are <span style="text-decoration:underline;">case-sensitive</span>, because of that we have to get a bit creative and find a command that turns the command into an all-lowercase word<br /><span style="text-decoration:underline;">Note:</span> Because in the commands that we are going to use contains spaces, they can get filtered. Because of that remember the chapter <a href="_Test_Methodology--WebApp_Pentest--Exploitation--Server-side--Injection--OS_Command_Injection_(RCE)--Filter_Evasion--Bypass_space_Filters.html">Bypass Space Filters</a> and the possible bypass for the space like %0a %09<br /><br />• <strong>tr</strong> command to convert uppercase to lowercase<br />    <div class="codebox"><pre>$(tr &quot;[A-Z]&quot; &quot;[a-z]&quot;&lt;&lt;&lt;&quot;WhOaMi&quot;)</pre></div><br />    <a href=""><img src="images/2435-3.png" alt="images/2435-3.png" /></a><br />• <strong>printf</strong> command to convert uppercase to lowercase<br />    <div class="codebox"><pre>$(a=&quot;WhOaMi&quot;;printf %s &quot;${a,,}&quot;)</pre></div><br />    <a href=""><img src="images/2435-4.png" alt="images/2435-4.png" /></a><br />    </div>
+</body>
+</html>

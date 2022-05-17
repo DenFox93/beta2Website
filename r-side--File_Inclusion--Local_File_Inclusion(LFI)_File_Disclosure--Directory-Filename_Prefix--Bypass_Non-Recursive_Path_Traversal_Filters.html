@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bypass: Non-Recursive Path Traversal Filters</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Bypass: Non-Recursive Path Traversal Filters</h1><br/><strong><h3>Non-Recursive Path Traversal Filters</h3></strong><br />A basic filters against LFI is search and replace filter, where it simply deletes substrings of (<code>../</code>) to avoid path traversals<br /><span style="color:#a52a2a;">example source code PHP:</span><br /><div class="codebox"><pre>$language = str_replace(&#39;../&#39;, &#39;&#39;, $_GET[&#39;language&#39;]);</pre></div><br /><br /><br /><span style="color:#a52a2a;">example SUCCESSFULLY FILTERED:</span><br />    <a href=""><img src="images/2333-1.png" alt="images/2333-1.png" /></a><br />All <code>../</code> substrings <span style="text-decoration:underline;">will be removed</span> from our input, which resulted in a final path being ./languages/etc/passwd.<br /> However, <span style="text-decoration:underline;">this filter is very insecure</span>, as it is not recursively removing the ../ substring, as it runs a single time on the input string and does not apply the filter recursively on the output string. <br /><br /><span style="color:#a52a2a;">example BYPASS:</span> if we use <code><span style="color:#00ff00;">..</span></code><code><span style="color:#ff0000;">../</span></code><code><span style="color:#00ff00;">/</span></code> as our payload, then the filter would remove <code><span style="color:#ff0000;">../</span></code> and the output string would be <code><span style="color:#00ff00;">../</span></code>, which means we may still perform path traversal. <br />   <a href=""><img src="images/2333-2.png" alt="images/2333-2.png" /></a><br />    <span style="color:#a4b1cd;"><br /><br /><br /></span><span style="text-decoration:underline;">Payload that could bypass “Non-Recursive Path Traversal Filters”</span><br /><div class="codebox"><pre>....//<br />..././<br />....\/<br />....\/     #escape slash<br />....////   #add extra forward slashes</pre></div><br /><span style="text-decoration:underline;">Note:</span> This technique should work regardless of the back-end development language or framework.<br /></div>
+</body>
+</html>

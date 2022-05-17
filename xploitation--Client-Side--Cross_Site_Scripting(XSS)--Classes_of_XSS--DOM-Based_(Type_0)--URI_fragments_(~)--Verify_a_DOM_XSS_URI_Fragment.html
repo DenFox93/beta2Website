@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Verify a DOM XSS URI Fragment</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Verify a DOM XSS URI Fragment</h1><br/><br />Below points are true only for DOM XSS URI fragment vulnerability and NOT for DOM XSS in general<br /><br />DOM XSS URI fragment is a form of XSS where the entire tainted data flow from <strong><span style="color:#ffa500;">source</span></strong> to <strong><span style="color:#a020f0;">sink</span></strong> takes place in the browser, i.e., the source of the data is in the DOM, the sink is also in the DOM, and the data flow never leaves the browser!<br /><br />To check if input parameter is client side through JavaScript and so processed on the browser:<br />• clent side parameters use a hashtag <strong>#</strong><br />	<a href=""><img src="images/2453-1.png" alt="images/2453-1.png" /></a><br />• When we give an input to a DOM based field there will be NOT request be made. We can check it in the Developer Tools → Network Tab (CTRL +I)<br />	<a href=""><img src="images/2453-2.png" alt="images/2453-2.png" /></a><br /><br />• The input will be <span style="text-decoration:underline;">visible only through the Inspector(CTRL+I)</span> of the page and <span style="text-decoration:underline;">NOT in the Source Code of the page</span>.<br />	This is because the JavaScript code is updating the page when we send the input, which is after the page source is retrieved by our browser, hence the base page source will not show our input, and if we refresh the page, <br />	<span style="text-decoration:underline;">Note:</span> for Reflected (Not Persistent) XSS the input is visible both in the Inspector and in the Source code because the input is processed Server Side and sent to the Client<br />   ◇ If we Inspect the page with the Inspector(CTRL+I) we will see the input:<br />	<a href=""><img src="images/2453-3.png" alt="images/2453-3.png" /></a><br />   ◇ if we check the page through the Source Code it will be NOT be there<br />   	<a href=""><img src="images/2453-4.png" alt="images/2453-4.png" /></a></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>IP Address Concealing</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>IP Address Concealing</h1><br/><br /><strong>Use a proxy to conceal the IP address</strong><br />In case we want to conceal our IP address, or if a certain web application has a protection mechanism that blacklists our current IP address, we can use<br />• Proxy <br />• Tor Network <br /><br />- <span style="text-decoration:underline;">A proxy</span> can be set with the option --proxy (e.g. --proxy=&quot;socks4://177.39.187.70:33283&quot;), where we should add a working proxy.<br />    In addition to that, if we have a list of proxies, we can provide them to SQLMap with the option --proxy-file. This way, SQLMap will go sequentially through the list, and in case of any problems (e.g., blacklisting of IP address), it will just skip from current to the next from the list. <br />- <span style="text-decoration:underline;">Tor network</span> use to provide an easy to use anonymization, where our IP can appear anywhere from a large list of Tor exit nodes. <br />   → When properly installed on the local machine, there should be a SOCKS4 proxy service at the local port 9050 or 9150. <br />   → By using switch --tor, SQLMap will automatically try to find the local port and use it appropriately.<br />   → If we wanted to be sure that Tor is properly being used, to prevent unwanted behavior, we could use the switch --check-tor. In such cases, SQLMap will connect to the https://check.torproject.org/ and check the response for the intended result (i.e., Congratulations appears inside).<br /><br /></div>
+</body>
+</html>

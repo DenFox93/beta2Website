@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>1. Enumerate domain accounts with SPNs set</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>1. Enumerate domain accounts with SPNs set</h1><br/><strong><h3>Enumerate the domain accounts with SPNs set</h3></strong><br />Services that support Kerberos authentication require to have a Service Principal Name (SPN) associated to point users to the appropriate resource for connection.<br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">PS</span>&gt; setspn <span style="color:#ff9d00;font-weight:700">-</span>T [DOMAIN] <span style="color:#ff9d00;font-weight:700">-</span>Q <span style="color:#ff9d00;font-weight:700">*/*</span></pre></div><br />    -T [domain] → perform query on the speicified domain or forest (when -F is also used)<br />     -Q */* → query for existence of SPN for all the service names and all host names<br />This command show us the mapping between user accounts and services (CN=Users)<br />    <a href=""><img src="images/1135-1.png" alt="images/1135-1.png" /></a><br /><br /><strong>Kerberoast tool from Tim Medin</strong>(<a href="https://github.com/nidem/kerberoast">GitHub - nidem/kerberoast</a>)<br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">PS</span>&gt;  cscript.exe GetUserSPNs.vbs</pre></div><br />    <a href=""><img src="images/1135-2.png" alt="images/1135-2.png" /></a><br /><br /></div>
+</body>
+</html>

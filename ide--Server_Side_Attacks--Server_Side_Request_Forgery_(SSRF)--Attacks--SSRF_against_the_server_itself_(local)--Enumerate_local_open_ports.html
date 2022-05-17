@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Enumerate local open ports</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Enumerate local open ports</h1><br/><br /><br />1. Generate a wordlist of ports<br />    <div class="codebox"><pre>for port in {1..65535};do echo $port &gt;&gt; ports.txt;done</pre></div><br /><br />2. Issue a cURL request to a random port to get the response size of a request for a non-existent service.<br />    <a href=""><img src="images/2563-1.png" alt="images/2563-1.png" /></a><br />    Note that the response size of a non existent port is 30<br />3. Use ffuf with the wordlist and discard (-fs) the responses which have the size we previously identified.<br />    <a href=""><img src="images/2563-2.png" alt="images/2563-2.png" /></a><br />    *with nmap show only the port 80 open<br />    <a href=""><img src="images/2563-3.png" alt="images/2563-3.png" /></a><br />5. Interact with the local port 5000 discovered with ffuf<br />    <a href=""><img src="images/2563-4.png" alt="images/2563-4.png" /></a></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Ensure AIDE is installed</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Ensure AIDE is installed</h1><br/><br />Run the following commands to verify AIDE is installed:<br /><div class="codebox"><pre>dpkg -s aide <span style="color:#ff9d00;font-weight:700">|</span> <span style="color:#ff9d00;font-weight:700">grep</span> -E <span style="color:#3ad900;font-weight:400">&#39;(Status:|not installed)&#39;</span></pre></div><br /><div class="codebox"><pre>dpkg -s aide-common <span style="color:#ff9d00;font-weight:700">|</span> <span style="color:#ff9d00;font-weight:700">grep</span> -E <span style="color:#3ad900;font-weight:400">&#39;(Status:|not installed)&#39;</span></pre></div><br /><br /><br />Installation:<br /><div class="codebox"><pre> apt <span style="color:#ff9d00;font-weight:700">install</span> aide aide-common</pre></div><br /><br /><br /><strong>Bibliography:</strong><br />CIS Ubuntu 20.04 </div>
+</body>
+</html>

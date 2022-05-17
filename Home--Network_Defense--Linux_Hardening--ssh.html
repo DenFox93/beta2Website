@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>ssh</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>ssh</h1><br/><br /><strong>sshdconfig </strong><br /><div class="codebox"><pre>nano /etc/ssh/sshdconfig </pre></div><br />• <strong>Allowed Users</strong><br />	edit the file with “AllowUsers” followed by the user of the machine allowed to login followed by “@” and by the source address ip of the allowed ip<br />	<div class="codebox"><pre>AllowUsers userTarget@ipSourceAllowed</pre></div><br />• ListenAddress<br />	Add the interface to which we want to add the that the host listen for a SSH connection<br />	<div class="codebox"><pre>ListenAddress [ipInterface]</pre></div><br /><br /></div>
+</body>
+</html>

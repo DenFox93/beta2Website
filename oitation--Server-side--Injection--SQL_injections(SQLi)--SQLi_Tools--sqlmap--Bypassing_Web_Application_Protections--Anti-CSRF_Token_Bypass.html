@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Anti-CSRF Token Bypass</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Anti-CSRF Token Bypass</h1><br/>WebApp usually have incorporated anti-CSRF (i.e., Cross-Site Request Forgery) tokens into all HTTP requests, especially those generated as a result of web-form filling.<br /><br />The switch --csrf-token allow us to specify which is the name of the csrf parameter<br /><div class="codebox"><pre>sqlmap -u &quot;http://www.example.com/&quot; --data=&quot;id=1&amp;csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE&quot; --csrf-token=&quot;csrf-token&quot;</pre></div><br /><a href=""><img src="images/2541-1.png" alt="images/2541-1.png" /></a></div>
+</body>
+</html>

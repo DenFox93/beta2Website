@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Unique Value Bypass</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Unique Value Bypass</h1><br/><br /><br />The web application may only require unique values to be provided inside predefined parameters. <br />We can easily bypass this requirement by simply ensuring that each request has a unique/random value for a predefined parameter.<br />For this, the option --randomize should be used, pointing to the parameter name containing a value which should be randomized before being sent<br /><br /><div class="codebox"><pre>sqlmap -u &quot;http://www.example.com/?id=1&amp;rp=29125&quot; --randomize=rp --batch -v 5 | grep URI</pre></div><br />    <a href=""><img src="images/2542-1.png" alt="images/2542-1.png" /></a></div>
+</body>
+</html>

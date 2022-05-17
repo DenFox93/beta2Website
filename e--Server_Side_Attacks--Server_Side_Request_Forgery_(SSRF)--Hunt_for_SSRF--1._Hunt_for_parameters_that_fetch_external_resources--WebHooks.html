@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>WebHooks</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>WebHooks</h1><br/><br />Webhooks are custom HTTP callback endpoints used: <br />• As a notification system for <span style="text-decoration:underline;">certain application events</span>:<br />   ◇ When new user sign-up<br />   ◇ When application error occurs<br />   The originating site will make an HTTP request to the webhook URL<br />   These HTTP requests help the company collect information about the website’s performance and visitors. <br />• As a notification system for <span style="text-decoration:underline;">kick-start another process</span>:<br />   ◇ When one action from an application needs to trigger an action on another application webhooks are a way of notifying the system to kick-start another process.<br />       <span style="color:#a52a2a;">example</span>: if a company wants to send a welcome email to every user who follows its social media account, it can use a webhook to connect the two applications.<br />• To <span style="text-decoration:underline;">allow users to set up their webhook URLs</span> (these settings pages are often vulnerable to SSRF)<br />    Most of the time, an application’s webhook service is in its developers’ portal. <br />    <span style="color:#a52a2a;">example</span>: example, Slack allows application owners to set up a webhook via its app configuration page (<a href="https://api.slack.com/apps/)">https://api.slack.com/apps/)</a>.<br />      Under the Event Subscriptions heading, you can specify a URL at which Slack will notify you when special events happen. <br />      The Request URL field of these webhook services is often vulnerable to SSRF.<br />      <a href=""><img src="images/2243-1.png" alt="images/2243-1.png" /></a><br />      <br /><br />Bibliography:<br />• <a href="https://www.amazon.com/Bug-Bounty-Bootcamp-Reporting-Vulnerabilities/dp/1718501544">Bug Bounty Bootcamp: The Guide to Finding and Reporting Web<br /></a></div>
+</body>
+</html>

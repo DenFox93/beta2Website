@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Network Defense</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Network Defense</h1><br/><br /><strong>Architecture of a Defensible Network(by Richard Bejtlich: </strong><a href="https://taosecurity.blogspot.com/2008/01/defensible-network-architecture-20.html">link</a><strong>):</strong><br />• Monitored → Deploy IDSes and IPSes  or any sensors that can capture:<br />   ◇ session data<br />   ◇ full content data (if you can get it)<br />   ◇ statistical data<br />   ◇ firewall/router/IPS/DNS/proxy/whatever logs<br />• Inventoried → Know every host and application<br />• Controlled<br />   ◇ ingress filtering<br />   ◇ egress filtering<br />   ◇ network admission control<br />   ◇ network access control<br />   ◇ proxy connections<br />   ◇ ...<br />• Claimed<br />   ◇ Identify owners of all systems<br />   ◇ developing policies, procedures, and plans for the operation of that asset<br />• Minimized → Reduce the attack surface (can&#39;t really implement minimization until you know who owns what)<br />• Assessed → Conduct vulnerability assessments. <br />    It is possible to place this step before minimization. <br />    Some might argue that it pays to begin with an assessment, but the first question is going to be: &quot;What do we assess?&quot; <br />• Current → Patched <br /><br /><br /><br /><br /></div>
+</body>
+</html>

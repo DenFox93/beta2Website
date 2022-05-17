@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>2. Provide Potentially Vulnerable Endpoints with Internal URLs</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>2. Provide Potentially Vulnerable Endpoints with Internal URLs</h1><br/><br />Depending on the network configuration, you might need to try several addresses before you find the ones in use by the network. <br />Common Ip Addresses reserved for the private network: <br />   ◇ localhost<br />   ◇ 127.0.0.1<br />   ◇ 0.0.0.0/8 → current network<br />   ◇ 192.168.0.0/16 → private network<br />   ◇ 198.18.0.0/15 → private network<br />   ◇ 10.0.0.0/8 → private network<br />   ◇ 100.64.0.0/10 → private network<br />   ◇ For more: <a href="https://en.wikipedia.org/wiki/Reserved_IP_addresses">https://en.wikipedia.org/wiki/Reserved_IP_addresses</a><br /><br /><br /><strong>Example of Tests</strong><br />• webhooks<br />    <div class="codebox"><pre>POST <span style="color:#ff9d00;font-weight:700">/</span>webhook<br />Host<span style="color:#ff9d00;font-weight:700">:</span> public.example.com<br /><br /><span style="color:#7f0044;font-weight:400">url</span>=https<span style="color:#ff9d00;font-weight:700">://</span>192.168.0.1</pre></div><br />• file uploads<br />    <div class="codebox"><pre>POST <span style="color:#ff9d00;font-weight:700">/</span>upload_profile_from_url<br />Host<span style="color:#ff9d00;font-weight:700">:</span> public.example.com<br /><br /><span style="color:#7f0044;font-weight:400">user_id</span>=1234<span style="color:#ff9d00;font-weight:700">&amp;</span>url=https<span style="color:#ff9d00;font-weight:700">://</span>192.168.0.1</pre></div><br />• document and image processors<br />• link expansions or thumbnails<br />• proxy services<br />    <div class="codebox"><pre>https<span style="color:#ff9d00;font-weight:700">://</span>public.example.com<span style="color:#ff9d00;font-weight:700">/</span>proxy?url=192.168.0.1</pre></div><br />• user-provided URLs</div>
+</body>
+</html>

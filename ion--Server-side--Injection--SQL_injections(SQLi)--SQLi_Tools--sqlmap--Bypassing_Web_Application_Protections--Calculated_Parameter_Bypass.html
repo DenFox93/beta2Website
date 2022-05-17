@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Calculated Parameter Bypass</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Calculated Parameter Bypass</h1><br/><br />Another protection mechanism is where a web application expects a proper parameter value to be calculated based on some other parameter value(s). <br />Most often, one parameter value has to contain the message digest (e.g. h=MD5(id)) of another one. To bypass this, the option --eval should be used, where a valid <span style="text-decoration:underline;">Python code</span> is being evaluated just before the request is being sent to the target<br /><br /><div class="codebox"><pre>sqlmap -u &quot;http://www.example.com/?id=1&amp;h=c4ca4238a0b923820dcc509a6f75849b&quot; --eval=&quot;import hashlib; h=hashlib.md5(id).hexdigest()&quot; --batch -v 5 | grep URI</pre></div></div>
+</body>
+</html>

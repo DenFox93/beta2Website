@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Retrieve local file on the Back End (HTB)</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Retrieve local file on the Back End (HTB)</h1><br/><br />1. We issue a simple cURL request to an internal we application we discovered previously (internal.app.local)<br />    Because the external webapp load the resource <code>q</code> parameter we try it also on the internal one<br />    <a href=""><img src="images/2564-1.png" alt="images/2564-1.png" /></a><br /><br />2. Interact with the back-end system itself<br />    <a href=""><img src="images/2564-2.png" alt="images/2564-2.png" /></a><br />    We have received an unknown url type error message. It seems the web application is removing <span style="color:#ffa500;">://</span> from our request<br /><br />3. Add other :// to our request. so it will be http::////127.0.0.1:1<br />    <a href=""><img src="images/2564-3.png" alt="images/2564-3.png" /></a><br />   Note that when the resource not exist the response contain &quot;<span style="color:#ff0000;">no host given</span>&quot;<br />4. With ffuf we can filter with a regex (-fr) and also by words (-fw)<br />    <div class="codebox"><pre>ffuf -w ./ports.txt:PORT -u &quot;http://&lt;TARGET IP&gt;/load?q=http://internal.app.local/load?q=http::////127.0.0.1:PORT&quot; -fr &#39;no host given&#39;</pre></div><br />    <a href=""><img src="images/2564-4.png" alt="images/2564-4.png" /></a><br />5. CURL on the port 5000 discovered<br />    <a href=""><img src="images/2564-5.png" alt="images/2564-5.png" /></a><br />6. Interact with the Internal Target<br />    In Linux based system the environment-variables of the current process (self) can be accessed via /proc/self/environ. <br />    Request the /proc/self/environ file, where the current path should be present under the PWD environment variable<br />    <a href=""><img src="images/2564-6.png" alt="images/2564-6.png" /></a><br /><br /></div>
+</body>
+</html>

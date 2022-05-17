@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>decrypt packets</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>decrypt packets</h1><br/><br />If we hold an accounts long-term Kerberos <span style="color:#ff0000;">secret key</span> used to encrypt the packets during the transmission, we can provide it to Wireshark in the settings:<br />    Edit → Preferences → Protocols → KRB5<br />    Here we have to add the .keytab file that contain the password to decrypt the packets<br />    <a href=""><img src="images/1137-1.png" alt="images/1137-1.png" /></a><br />Now when we restart Wireshark we should see the encrypted data in cleartext<br /><br /><strong>How to generate keytab file</strong><br />First we have to install the<span style="color:#0288d1;"> </span><strong>heimdal-dbg</strong> package<br /><div class="codebox"><pre>root@kali<span style="color:#ff9d00;font-weight:700">:/</span># apt-get <span style="color:#ff9d00;font-weight:700">install</span> heimdal-clients</pre></div><br />Now we can use <strong>ktutil</strong> tool. <br /><span style="text-decoration:underline;">The only important data</span> that we will insert <span style="text-decoration:underline;">is the password</span>(of the <span style="color:#ff8700;">krbtgt</span> or of the <span style="color:#f6ff00;">Service</span> account). because is this one that Wireshark will use to decrypt the data<br /><div class="codebox"><pre>root@kali<span style="color:#ff9d00;font-weight:700">:/</span># ktutil<br />ktutil<span style="color:#ff9d00;font-weight:700">:</span> addent -password -p [principal] -k 0 -e rc4-hmac<br />ktutil<span style="color:#ff9d00;font-weight:700">:</span> write_kt key2.keytab                               <span style="color:#0088ff;font-weight:400">#save file in the current folder</span></pre></div><br /><a href=""><img src="images/1137-2.png" alt="images/1137-2.png" /></a><br /></div>
+</body>
+</html>

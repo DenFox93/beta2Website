@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Bypass: Only Approved Paths</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Bypass: Only Approved Paths</h1><br/><strong><h3>Bypass</h3></strong><strong><h3> Approved Paths</h3></strong><br />It is also possible use Regular Expressions in the source code of the WebApp to ensure that the file being included by the user is under a specific path.<br /><br /><span style="color:#a52a2a;">example source code PHP:</span><br />only accept paths that are under the ./languages directory<br />	<div class="codebox"><pre>if(preg_match(&#39;/^\.\/languages\/.+$/&#39;, $_GET[&#39;language&#39;])) {<br />    include($_GET[&#39;language&#39;]);<br />} else {<br />    echo &#39;Illegal path specified!&#39;;<br />}</pre></div><code><br /></code>	<span style="text-decoration:underline;">Note:</span> The WebApp in thi example does not add any Directory Prefix, since “include($_GET[&#39;language&#39;]);” does not specify any folder before the input.<br /><br /><span style="color:#a52a2a;">example BYPASS:</span><br />	To bypass this, we may use path traversal and start our payload with the approved path, and then use ../ to go back to the root directory and read the file that we want<br />	<a href=""><img src="images/2332-1.png" alt="images/2332-1.png" /></a><br /><br /><span style="text-decoration:underline;">Note:</span> This technique should work regardless of the back-end development language or framework.</div>
+</body>
+</html>

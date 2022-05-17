@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Blind SSRF in the Header Referer</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Blind SSRF in the Header Referer</h1><br/><br />This site uses analytics software which <span style="text-decoration:underline;">fetches the URL specified in the </span><strong><span style="text-decoration:underline;">Referer header</span></strong> when a product page is loaded<br /><br /><strong>Exercise</strong><br />1. In Burp Suite Professional, go to the Burp menu and launch the Burp Collaborator client.<br />	Click &quot;Copy to clipboard&quot; to copy a unique Burp Collaborator payload to your clipboard. Leave the Burp Collaborator client window open.<br />	<a href=""><img src="images/2239-1.png" alt="images/2239-1.png" /></a><br />2. Visit a product, intercept the request in Burp Suite, and send it to Burp Repeater.<br />	<a href=""><img src="images/2239-2.png" alt="images/2239-2.png" /></a><br />3. Change the Referer header to use the generated Burp Collaborator domain in place of the original domain. Send the request.<br />	<a href=""><img src="images/2239-3.png" alt="images/2239-3.png" /></a><br />8. Go back to the Burp Collaborator client window, and click &quot;Poll now&quot;. <br />	We should see some DNS and HTTP interactions that were initiated by the application as the result of your payload.<br />	<a href=""><img src="images/2239-4.png" alt="images/2239-4.png" /></a><br /><br />Bibliography:<br /><a href="https://portswigger.net/web-security/ssrf/blind/lab-out-of-band-detection">https://portswigger.net/web-security/ssrf/blind/lab-out-of-band-detection</a></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Test: Input is sanitized?</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Test: Input is sanitized?</h1><br/><strong>use a HTML tag in the search field</strong><br />   ◇  <div class="codebox"><pre>&lt;h1&gt;HTMLinjection&lt;/h1&gt;</pre></div><br />       <a href=""><img src="images/1573-1.png" alt="images/1573-1.png" /></a><br />       <a href=""><img src="images/1573-2.png" alt="images/1573-2.png" /></a><br />        input not sanitized!<br />   ◇ <div class="codebox"><pre>&lt;h6&gt;HTMLinjection&lt;/h6&gt;</pre></div><br />       <a href=""><img src="images/1573-3.png" alt="images/1573-3.png" /></a><br />        input not sanitized!<br />   ◇ <div class="codebox"><pre><span style="color:#7f0044;font-weight:400">&lt;h1</span> <span style="color:#3ad900;font-weight:400">style=-moz-transform:rotate(-180deg);</span><span style="color:#7f0044;font-weight:400">&gt;</span>HTMLinjection<span style="color:#7f0044;font-weight:400">&lt;/h1&gt;</span></pre></div><br />        moz-transform:rotate() → <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a><br />        <a href=""><img src="images/1573-4.png" alt="images/1573-4.png" /></a><br />   ◇ Image Injection<br />       <div class="codebox"><pre><span style="color:#7f0044;font-weight:400">&lt;img</span> <span style="color:#333333;font-weight:400">src=</span><span style="color:#3ad900;font-weight:400">&quot;https://example.org/earth.jpg&quot;</span><span style="color:#7f0044;font-weight:400">&gt;</span></pre></div><br />        <a href=""><img src="images/1573-5.png" alt="images/1573-5.png" /></a><br />   ◇ iframe inject (A web application rendered inside the Vulnerable Web Application)<br />      <div class="codebox"><pre><span style="color:#7f0044;font-weight:400">&lt;iframe</span> <span style="color:#333333;font-weight:400">src=</span><span style="color:#3ad900;font-weight:400">&quot;https://www.example.com&quot;</span><span style="color:#7f0044;font-weight:400">&gt;</span></pre></div></div>
+</body>
+</html>

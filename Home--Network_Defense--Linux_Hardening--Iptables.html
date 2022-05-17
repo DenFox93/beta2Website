@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Iptables</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Iptables</h1><br/><br /><br /><br />#defualt deny policy<br />iptables -P INPUT DROP<br />iptables -P OUTPUT DROP<br />iptables -P FORWARD DROP<br /><br />#accept traffic on the loopback interface<br />#drop any other traffic on the 127.0.0.0 network<br />iptables -A INPUT -i lo -j ACCEPT<br />iptables -A OUTPUT -o lo -j ACCEPT<br />iptables -A INPUT -s 127.0.0.0/8 -j DROP<br /><br />#SERVER allow inbound ssh traffic<br /><span style="color:#e01b24;">iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT</span><br /><span style="color:#e01b24;">iptables -A INPUT -p tcp --dport 22 -m state --state NEW  -j ACCEPT</span><br /><br />#CLIENT allow output ssh traffic<br /><span style="color:#e01b24;">iptables -A OUTPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT</span><br /><span style="color:#e01b24;">iptables -A INPUT -p tcp --sport 22 -m state --state ESTABLISHED  -j ACCEPT</span><br /><br />#Log any other traffic before it gets whacked by the default policy<br /><span style="color:#e01b24;">iptables -A INPUT -j LOG<br />iptables -A OUTPUT -j LOG<br />iptables -A INPUT -j LOG</span></div>
+</body>
+</html>

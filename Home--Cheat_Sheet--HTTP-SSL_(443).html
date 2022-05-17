@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>HTTP/SSL (443)</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>HTTP/SSL (443)</h1><br/><br /><br />Find hostnames that resolve to this IP address and then add these hostnames to /etc/hosts<br /><div class="codebox"><pre>nmap --script=ssl-cert.nse 10.50.96.5</pre></div><br /><div class="codebox"><pre>nmap -sC -sV -p 443 10.50.96.5</pre></div><br />	ssl-cert: Subject: commonName=<span style="color:#ff7800;">brainfuck.htb</span>/organizationName=Brainfuck Ltd./stateOrProvinceName=Attica/countryName=GR<br />    Subject Alternative Name: DNS:<span style="color:#ff7800;">www.brainfuck.htb</span>, DNS:<span style="color:#ff7800;">sup3rs3cr3t.brainfuck.htb</span><br /><br />Add to /etc/hosts<br />	<div class="codebox"><pre>10.50.96.5 brainfuck.htb www.brainfuck.htb sup3rs3cr3t.brainfuck.htb </pre></div><br />	<br /><br /><br /><br /><strong><h3>Information Gathering</h3></strong> (view the SSL certificate)<br />1. lock icon &gt; <em>Show Connection Details</em>.<br />	<a href=""><img src="images/2667-1.png" alt="images/2667-1.png" /></a><br />2. More Information &gt; View Certificate &gt; Details.<br />	<a href=""><img src="images/2667-2.png" alt="images/2667-2.png" /></a><br />	<a href=""><img src="images/2667-3.png" alt="images/2667-3.png" /></a><br />	search for emails or domain connected to the ip<br /></div>
+</body>
+</html>

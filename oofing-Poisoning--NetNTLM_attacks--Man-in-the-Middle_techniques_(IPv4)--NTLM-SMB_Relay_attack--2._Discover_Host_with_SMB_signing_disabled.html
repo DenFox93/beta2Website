@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>2. Discover Host with SMB signing disabled</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>2. Discover Host with SMB signing disabled</h1><br/><strong><h3>Determining if SMB Signing is enabled on a target</h3></strong><br />If SMB signing is enabled mean that is not possible impersonate other hosts in the network<br /><br /><br /><strong>RunFinger.py</strong>  ← BETTER<br />tool which is included with the Responder toolkit.<br />    <div class="codebox"><pre><br />python <span style="color:#ff9d00;font-weight:700">/</span>usr<span style="color:#ff9d00;font-weight:700">/</span>share<span style="color:#ff9d00;font-weight:700">/</span>responder<span style="color:#ff9d00;font-weight:700">/</span>tools<span style="color:#ff9d00;font-weight:700">/</span>RunFinger.py -i &lt;IP_Address&gt;    <span style="color:#0088ff;font-weight:400">#we ca use also the CIDR notation to scan the network</span></pre></div><br />    <a href=""><img src="images/958-1.png" alt="images/958-1.png" /></a><br />    or<br />    <div class="codebox"><pre>responder-RunFinger -i &lt;IP_Address&gt;    <span style="color:#0088ff;font-weight:400">#we ca use also the CIDR notation to scan the network</span></pre></div><br />    <a href=""><img src="images/958-2.png" alt="images/958-2.png" /></a><br /><br />• <strong>NSE script: smb2-security-mode</strong><br /><div class="codebox"><pre>root@kali<span style="color:#ff9d00;font-weight:700">:</span>~# nmap --script=smb2-security-mode.nse -p445 192.168.176.0<span style="color:#ff9d00;font-weight:700">/</span>24</pre></div><br />    <a href=""><img src="images/958-3.png" alt="images/958-3.png" /></a><br /><br /></div>
+</body>
+</html>
